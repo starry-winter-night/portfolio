@@ -26,16 +26,24 @@
     <link rel="stylesheet" href="public/style.css" />
     <script src="main.js" defer></script>
     <script src="javascript/starryNight.js" defer></script>
+    <script src="javascript/rocketGuide.js" defer></script>
   </head>
   <body>
     <canvas id="starryNightCanvas"></canvas>
     <!-- Navbar -->
-    <nav id="navbar" class="section">
+    <nav id="navbar" class="navbar">
       <div class="navbar__logo">
         <a href="#">WEB </br> DEVELOPER </br> SMPARK</a>
+        <div class="navbar__github"></div>
+        <div class="navbar__email>"></div>
       </div>
-      <div class="navbar__github"></div>
-      <div class="navbar__email>"></div>
+      
+      <div class="navbar__guide">
+        <img src="imgs/earth.png" alt="지구 이미지" class="navbar__earth">
+        <img src="imgs/spaceShip.gif" alt="로켓 이미지" class="navbar__rocket">
+        <img src="imgs/mars.png" alt="화성 이미지" class="navbar__mars">
+      </div>
+     
       <ul class="navbar__menu">
         <li class="navbar_menu_item">Home</li>
         <li class="navbar_menu_item">About</li>
@@ -74,7 +82,7 @@
         </div>
         <div class="major">
           <div class="major__icon"><i class="fas fa-server"></i></div>
-          <dh2iv class="major__title">Back-end</dh2iv>
+          <h2 class="major__title">Back-end</h2>
           <div class="major__description">NodeJS, MySQL, MongoDB <br /></div>
         </div>
       </div>
