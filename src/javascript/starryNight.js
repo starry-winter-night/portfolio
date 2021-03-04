@@ -88,7 +88,7 @@
       // white
       else return "rgba(255,255,255";
     }
-
+    
     function directShootingStar() {
       const data = Math.floor(shootingStar.vx);
       if (data % 2 == 0) {
@@ -106,7 +106,7 @@
     function renderStarryNight() {
       drawMilkyWay();
       drawShootingStar();
-      window.requestAnimationFrame(renderStarryNight);
+      requestAnimationFrame(renderStarryNight);
     }
   }
 })();

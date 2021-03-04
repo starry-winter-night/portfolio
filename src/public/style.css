@@ -11,7 +11,7 @@
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
   --color-light-yellow: #fff7d1;
-  --color-orange: #feb546;
+  --color-orange: #f35f2c;
   --color-yellow: #f2d038;
   --color-black: #000000;
   --color-background: #02020e;
@@ -68,14 +68,14 @@ button {
 
 h1 {
   font-size: var(--font-large);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-regular);
   color: var(--color-light-white);
   margin: 30px 0px;
 }
 
 h2 {
   font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
+  font-weight: var(--weight-regular);
   color: var(--color-light-white);
   margin: 25px 0;
 }
@@ -142,7 +142,7 @@ body {
   margin: auto;
 }
 .navbar__logo a:hover {
-  color: var(--color-yellow);
+  color: var(--color-orange);
 }
 
 .navbar__guide {
@@ -191,7 +191,7 @@ body {
 }
 
 .aside__menu li:hover {
-  color: var(--color-yellow);
+  color: var(--color-orange);
 }
 
 .aside__smpchat {
@@ -235,7 +235,6 @@ body {
 }
 
 .home__dscription {
-  font-weight: 700;
   letter-spacing: 0.125em;
   font-size: var(--font-micro);
   line-height: 30px;
@@ -311,7 +310,7 @@ body {
 }
 
 .major__icon:hover i {
-  color: var(--color-yellow);
+  color: var(--color-orange);
   transform: scale(1.2);
 }
 
@@ -327,3 +326,57 @@ body {
   border-bottom: 5px solid var(--color-dark-white);
   margin: auto;
 }
+
+.skills > h2 {
+  margin-top: 40px;
+}
+
+.skills > p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Nanum Gothic Coding", monospace;
+  color: var(--color-dark-white);
+  font-weight: 100;
+  line-height: 25px;
+}
+
+.skillset {
+  background-color: var(--color-backgroundTransparency);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skillset__left {
+  flex-basis: 60%;
+}
+
+.skill {
+  padding: 10px;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color:var(--color-dark-grey);
+}
+
+.skill__value {
+  width: 70%;
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.tools__list li{
+  padding:20px;
+}
+

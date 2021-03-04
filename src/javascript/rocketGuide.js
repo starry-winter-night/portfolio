@@ -1,16 +1,15 @@
 (() => {
   let lastScrollTop = 0;
-  document.addEventListener("scroll", initRocketGuide);
+  const rocket = document.querySelector(".navbar__rocket");
+  const travelRoad = document.querySelector(".navbar__guide");
+  document.addEventListener("scroll", optimization(initRocketGuide), false);
 
-
-  
   function initRocketGuide() {
-    const rocket = document.querySelector(".navbar__rocket");
-    const travelRoad = document.querySelector(".navbar__guide");
     const clientWidth = travelRoad.clientWidth;
     const currentScrollTop = document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
     const clientTop = document.documentElement.clientHeight;
+
     render();
     updateLastSrollTop();
 
@@ -37,5 +36,19 @@
     function updateLastSrollTop() {
       lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     }
+  }
+  function optimization(callback) {
+    let isRunning = false;
+    return function () {
+      if (isRunning) {
+        console.log("wow");
+        return;
+      }
+      isRunning = true;
+      window.requestAnimationFrame(() => {
+        callback();
+        isRunning = false;
+      });
+    };
   }
 })();
