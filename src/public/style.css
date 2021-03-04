@@ -62,6 +62,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  color: var(--color-light-white);
 }
 
 /* Typography */
@@ -124,8 +125,9 @@ body {
 .navbar {
   position: fixed;
   width: 100%;
+  display: flex;
   top: 0;
-  padding: 25px 0 50px 0;
+  padding: 0 0 50px 0;
 }
 
 .navbar__logo {
@@ -133,8 +135,9 @@ body {
   line-height: 30px;
   letter-spacing: 0.5rem;
   font-weight: 700;
-  width: 15%;
-  display: flex;
+  flex-basis: 15%;
+  padding-left: 2%;
+  padding-top: 25px;
   text-transform: uppercase;
   font-size: var(--font-regular);
 }
@@ -146,15 +149,12 @@ body {
 }
 
 .navbar__guide {
-  position: absolute;
-  top: 0%;
-  left: 15%;
-  width: 70%;
-  height: 135px;
+  position: sticky;
+  flex-basis: 70%;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 0 auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -170,7 +170,6 @@ body {
 
 /*  Aside  */
 .aside__menu {
-  text-align: right;
   font-family: "sofia_probold";
   display: flex;
   flex-direction: column;
@@ -178,7 +177,6 @@ body {
   top: 3%;
   right: 0%;
   width: 15%;
-  /* border-left: 1px solid rgba(255, 255, 255, 0.1); */
   justify-content: space-between;
   height: 90%;
   align-items: center;
@@ -269,30 +267,41 @@ body {
   margin: 40px 0;
 }
 
-.about_jobs > .job {
-  text-align: center;
+.about_jobs {
+  display: flex;
+  flex-direction: column;
 }
 
-.about_jobs > .job > ul {
+.job {
+  text-align: center;
+  display: flex;
+}
+
+.job > ul {
   line-height: 35px;
   text-align: left;
-  height: 100px;
-  display: inline-block;
-  margin: auto;
-  vertical-align: top;
+  justify-content: center;
+  padding-left: 10%;
+  flex-basis: 85%;
+  display: flex;
+  flex-direction: column;
 }
 
-.about_jobs > .job > ul > li {
+.job > ul > li {
   list-style: initial;
   color: var(--color-dark-white);
   font-size: var(--font-micro);
 }
 
-.about_jobs > div > img {
-  height: 100px;
-  width: 30;
-  display: inline-block;
-  margin-right: 10%;
+.about__jobImg {
+  flex-basis: 15%;
+  max-width: 110px;
+  margin-left: 5%;
+}
+
+.job__logo {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .major__icon {
@@ -347,13 +356,19 @@ body {
   display: flex;
 }
 
+.skillset__title {
+  margin: 15px 0 30px 0;
+  font-weight: 700;
+}
+
 .skill__description {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2px;
 }
 
 .skillset__left {
-  flex-basis: 60%;
+  flex-basis: 70%;
 }
 
 .skill {
@@ -361,13 +376,13 @@ body {
 }
 
 .skillset__right {
-  flex-basis: 40%;
+  flex-basis: 30%;
 }
 
 .skill__bar {
   width: 100%;
   height: 3px;
-  background-color:var(--color-dark-grey);
+  background-color: var(--color-dark-grey);
 }
 
 .skill__value {
@@ -376,7 +391,92 @@ body {
   background-color: var(--color-orange);
 }
 
-.tools__list li{
-  padding:20px;
+.tools__list li {
+  padding: 20px;
 }
 
+/*  Work  */
+.work__title {
+  width: 20em;
+  height: 120px;
+  line-height: 130px;
+  border-bottom: 5px solid var(--color-dark-white);
+  margin: auto;
+}
+
+.work > h2 {
+  margin-top: 40px;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.work__projects h2 {
+  width: 100%;
+}
+
+.work__projects > h2:after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: 15px;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-white);
+}
+
+.work__projects > .work__backend {
+  width: 220px;
+  height: 220px;
+}
+
+.project {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.project:hover .projcet__description {
+  opacity: 0;
+}
+
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.projcet__description {
+  position: absolute;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.8;
+  transition: all var(--animation-duration) ease-in;
+  border-radius: 50%;
+}
+
+.projcet__description h3 {
+  font-size: var(--font-regular);
+  padding: 0.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.projcet__description span {
+  padding: 0.5rem;
+  font-size: var(--font-small);
+}

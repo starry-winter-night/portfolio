@@ -123,7 +123,9 @@
       </div>
       <div class="about_jobs">
         <div class="job">
-          <img src="imgs/irexnet.png" alt="irexnet" class="job__logo" />
+          <div class="about__jobImg">
+            <img src="imgs/irexnet.png" alt="irexnet" class="job__logo" />
+          </div>
           <ul>
             <li>(주)아이렉스넷에서 1년 2개월 웹 개발자로 일하였습니다.</li>
             <li>
@@ -211,8 +213,7 @@
         </div>
         <div class="skillset__right">
           <div class="tools">
-            <h3>Etc</h3>
-            <div class="skillset__title"></div>
+            <h3 class="skillset__title">Etc</h3>
             <ul class="tools__list">
               <li>
                 <span>Visual Studio Code</span>
@@ -233,42 +234,46 @@
     </section>
     <!-- Work -->
     <section id="work" class="work section">
-      <h1>My work</h1>
-      <h3>Projects</h3>
-      <div class="work__categories">
-        <button class="category__btn">
-          All
-          <span class="category__count">8</span>
-        </button>
-        <button class="category__btn">
-          Front-end
-          <span class="category__count">3</span>
-        </button>
-        <button class="category__btn">
-          Back-end
-          <span class="category__count">2</span>
-        </button>
+      <div class="work__title">
+        <h1>My work</h1>
       </div>
       <div class="work__projects">
-        <a href="#" class="project" target="_blank">
-          <img src="imgs/spaceShip.gif" alt="" />
+        <h2>Back-end</h2>
+        <a href="#" class="project work__backend" target="_blank">
+          <img
+            src="imgs/oauth2.0.png"
+            alt="oauth2.0 로고"
+            class="project__img"
+          />
           <div class="projcet__description">
-            <h3>OauthServer</h3>
-            <span>OauthServer</span>
+            <h3>Oauth2.0 Server</h3>
+            <span>자체제작 Oauth server</span>
           </div>
         </a>
-        <a href="#" class="project" target="_blank">
-          <img src="imgs/mars.png" alt="" />
+        <h2>Front-end</h2>
+        <a href="#" class="project work__frontend" target="_blank">
+          <img
+            src="imgs/message.png"
+            alt="채팅 아이콘 이미지"
+            class="project__img"
+          />
           <div class="projcet__description">
-            <h3>OauthServer</h3>
-            <span>OauthServer</span>
+            <h3>SocketIO ChatService Library</h3>
+            <span>OauthServer 연동</span>
           </div>
         </a>
-        <a href="#" class="project" target="_blank">
-          <img src="imgs/mars.png" alt="" />
+        <a href="#" class="project work__frontend" target="_blank">
+          <img src="imgs/smpark.jpg" alt="owner 이미지" class="project__img" />
           <div class="projcet__description">
-            <h3>OauthServer</h3>
-            <span>OauthServer</span>
+            <h3>Portfolio Site</h3>
+            <span>Canvas, My Chat Library 적용</span>
+          </div>
+        </a>
+        <a href="#" class="project work__frontend" target="_blank">
+          <img src="imgs/smpark.jpg" alt="owner 이미지" class="project__img" />
+          <div class="projcet__description">
+            <h3>SocketIO ChatService Library</h3>
+            <span>OauthServer 연동</span>
           </div>
         </a>
       </div>
