@@ -1,54 +1,65 @@
-(() => {
-  let lastScrollTop = 0;
-  const rocket = document.querySelector(".navbar__rocket");
+rocketGuide();
+function rocketGuide() {
+  let prevScrollHeight = 0; // 스크롤시 0부터 시작.
+  const rocketImg = document.querySelector(".navbar__rocket");
   const travelRoad = document.querySelector(".navbar__guide");
+  const earthImg = document.querySelector(".navbar__earth");
+  const marsImg = document.querySelector(".navbar__mars");
   document.addEventListener("scroll", optimization(initRocketGuide), false);
 
   function initRocketGuide() {
-    const clientWidth = travelRoad.clientWidth;
-    const currentScrollTop = document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight;
-    const clientTop = document.documentElement.clientHeight;
+    const travelRoadWidth = travelRoad.clientWidth;
+    const scrollHeight = window.pageYOffset;
+    const pageTotalHeight = document.documentElement.scrollHeight;
+    const currentViewHeight = window.innerHeight;
 
     render();
-    updateLastSrollTop();
+    updatePrevScrollHeight();
 
     function render() {
-      rocket.style.left = `${calcRocketTravelDistance() - 150}px`;
-      rocket.style.transform = rocektRotate();
+      rocketImg.style.left = `${
+        calcRocketTravelDistance() + earthImg.clientWidth
+      }px`;
+      rocketImg.style.transform = rocektRotate();
     }
     function rocektRotate() {
-      return (deg =
-        currentScrollTop > lastScrollTop ? "rotate(0deg)" : "rotate(180deg)");
+      return scrollHeight > prevScrollHeight
+        ? "rotate(0deg)"
+        : "rotate(180deg)";
     }
     function calcScrollTopMaximum() {
-      return scrollHeight - clientTop;
+      return pageTotalHeight - currentViewHeight;
     }
     function calcHeightValuePercent() {
-      return Math.floor((currentScrollTop / calcScrollTopMaximum()) * 100);
+      return Math.floor((scrollHeight / calcScrollTopMaximum()) * 100);
     }
     function calcOnePercentWidthPixel() {
-      return (clientWidth - 150) / 100;
+      return (
+        (travelRoadWidth -
+          (rocketImg.clientWidth +
+            earthImg.clientWidth +
+            marsImg.clientWidth)) /
+        100
+      );
     }
     function calcRocketTravelDistance() {
-      return calcOnePercentWidthPixel() * calcHeightValuePercent() + 200;
+      return calcOnePercentWidthPixel() * calcHeightValuePercent();
     }
-    function updateLastSrollTop() {
-      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    function updatePrevScrollHeight() {
+      prevScrollHeight = scrollHeight <= 0 ? 0 : scrollHeight;
     }
   }
+
+  // 최적화
   function optimization(callback) {
-    let isRunning = false;
+    let ticking = null;
     return function () {
-      if (isRunning) {
-        console.log("wow");
-        return;
+      if (ticking) {
+        window.cancelAnimationFrame(ticking);
       }
-      isRunning = true;
-      window.requestAnimationFrame(() => {
+      ticking = window.requestAnimationFrame(() => {
         callback();
-        isRunning = false;
       });
     };
   }
-})();
+}

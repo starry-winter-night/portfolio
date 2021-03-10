@@ -190,12 +190,16 @@ body {
   padding: 30px 30px 170px 30px;
 }
 
-.aside__menu li {
+.aside_menu_item {
   cursor: pointer;
   font-size: var(--font-regular);
 }
 
-.aside__menu li:hover {
+.aside_menu_item:hover {
+  color: var(--color-blue);
+}
+
+.aside_menu_item.view {
   color: var(--color-orange);
 }
 
@@ -521,7 +525,7 @@ body {
 .contact__container {
   background-color: var(--color-backgroundTransparency);
   border-radius: 15px;
-  padding: 50px;
+  padding: 60px 50px;
   margin-top: 30px;
   margin-bottom: 55px;
   display: flex;
@@ -613,7 +617,7 @@ body {
 
   /*  Navbar  */
   .navbar {
-    padding: 15px;
+    padding: 10px 15px;
     background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -629,39 +633,50 @@ body {
   /*  aside  */
   .aside {
     padding-top: 45px;
+    width: 100px;
   }
 
   .aside.active {
-    top: -20px;
-    width: auto;
+    top: 0;
+    padding-top: 0;
   }
-
 
   .aside__menu {
     display: none;
+    animation-duration : var(--animation-duration);
+    animation-name: menuSlide;
+  }
+
+  @keyframes menuSlide {
+    from {
+      transform: translateX(100px);
+    }
+    to {
+      transform: translateX(0px);
+    }
   }
 
   .aside__menu.active {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 90%;
-    border-radius: 15px;
-    font-size: --var(--font-small);
+    height: 100%;
+    font-size: var(--font-small);
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 62px 10px 62px 10px;
+    padding: 135px 10px 160px 10px;
+    
   }
 
   .aside__menu__btn {
     display: block;
-  }
-
-  .aside__menu__btn.active {
-    display: none;
+    position: absolute;
+    top: 39px;
+    left: 37px;
   }
 
   .aside__smpchat {
-    bottom: 25px;
+    bottom: 0px;
+    width: 100px;
   }
 
   .aside__smpchat img {
@@ -670,12 +685,21 @@ body {
   }
 
   /*  Home  */
+  .home {
+    padding: 60px 0;
+  }
+
   .home__title {
     font-size: var(--font-medium);
+    margin-bottom: 45px;
   }
 
   .home img {
     margin: 0;
+  }
+
+  .home__dscription {
+    margin-top: 80px;
   }
 
   /*  About  */
@@ -718,6 +742,15 @@ body {
 
   .skillset {
     padding: 15px;
+    flex-direction: column;
+  }
+
+  .skills > p {
+    margin: 25px 0;
+  }
+
+  .tools__list li {
+    padding : 5px;
   }
 
   /*  Work  */
@@ -746,7 +779,16 @@ body {
   }
 
   .contact__container {
-    padding: 20px 15px;
+    padding: 25px 15px;
     flex-direction: column;
+    margin-bottom: 35px;
+  }
+
+  .contact__guide {
+    margin: 35px 0;
+  }
+
+  .contact__rights {
+    margin-bottom: 25px;
   }
 }
