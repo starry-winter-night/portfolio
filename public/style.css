@@ -39,7 +39,7 @@
   box-sizing: border-box;
 }
 @font-face {
-  src: url("/src/public/font/sofiaPro/Sofia\ Pro\ Bold\ Az.otf");
+  src: local("Sofia Pro"), url("./font/sofiaPro/Sofia\ Pro\ Bold\ Az.otf");
   font-family: "sofia_probold";
 }
 
