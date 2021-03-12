@@ -38,6 +38,7 @@
 * {
   box-sizing: border-box;
 }
+
 @font-face {
   src: local("Sofia Pro"), url("./font/sofiaPro/Sofia\ Pro\ Bold\ Az.otf");
   font-family: "sofia_probold";
@@ -108,6 +109,7 @@ body {
   color: var(--color-light-white);
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  -webkit-overflow-scrolling: touch;
 }
 
 /*  Section common  */
@@ -176,7 +178,7 @@ body {
   width: 15%;
   height: 100%;
   z-index: 3;
-  padding-top: 20px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
 }
