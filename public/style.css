@@ -105,11 +105,18 @@ canvas {
   height: 100%;
 }
 
+html {
+  overflow:hidden;
+}
+
 body {
   color: var(--color-light-white);
   margin: 0;
+  position: fixed;
   font-family: "Open Sans", sans-serif;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
 /*  Section common  */
