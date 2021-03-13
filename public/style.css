@@ -114,6 +114,7 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   overflow-y: scroll;
+  /* height: 100%; */
   -webkit-overflow-scrolling: touch;
   background-color: var(--color-background);
 }
@@ -694,15 +695,17 @@ body {
   }
 
   .aside__smpchat {
-    position: absolute;
-    bottom: 25px;
-    right: 32%;
+    /* position: absolute; */
+    /* bottom: 25px; */
+    /* right: 32%; */
+    position: fixed;
+    bottom: 50px;
   }
 
-  .aside.active > .aside__smpchat {
+  /* .aside.active > .aside__smpchat {
     position: static;
     margin-bottom: 25px;
-  }
+  } */
 
   .aside__smpchat img {
     width: 35px;
@@ -815,5 +818,15 @@ body {
 
   .contact__rights {
     margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .aside__menu.active {
+    flex-basis: 60%;
+  }
+
+  .aside__smpchat {
+    bottom: 25px;
   }
 }
