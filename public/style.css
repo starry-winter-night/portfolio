@@ -818,6 +818,25 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) and (max-height: 1024px) {
+  .aside__menu.active {
+    bottom: 150px;
+  }
+
+  .aside__smpchat {
+    bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-height: 1024px) {
+  .aside__menu.active {
+    bottom: 90px;
+  }
+  .aside__smpchat {
+    bottom: 50px;
+  }
+}
+
 @media screen and (max-height: 500px) {
   .aside__menu.active {
     height: 65%;
@@ -826,5 +845,26 @@ body {
 
   .aside__smpchat {
     bottom: 25px;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  .aside__smpchat {
+    bottom: 10px;
+  }
+}
+
+/* 갤럭시 폴드 */
+@media screen and (max-height: 280px) {
+  .aside__menu__btn {
+    margin-top: 15px;
+  }
+
+  .aside__menu.active {
+    height: 60%;
+    top: 60px;
+  }
+  .aside__smpchat {
+    bottom: 10px;
   }
 }
