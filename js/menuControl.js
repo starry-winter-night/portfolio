@@ -51,7 +51,6 @@
       // 화면 밖으로 나갔을 경우와 load와 동시에 이미 화면 밖에 있는 Ratio 0인 경우가 아닌 경우.
       entries.forEach((entry) => {
         if (!entry.isIntersecting && entry.intersectionRatio > 0) {
-          console.log(entry)
           changeMenuItemClass(
             document.querySelector(`[data-id="#${entry.target.id}"]`),
             entry.boundingClientRect.y
