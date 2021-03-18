@@ -45,7 +45,7 @@ function initStarryNight() {
       x: canvas.width * Math.random(),
       y: 0,
       vx: Math.random() * 12,
-      vy: (Math.random()) * 8,
+      vy: (Math.random() + 0.3) * 5,
       r: Math.random() + 1.3,
       color: changeRandomStarColor(),
     };
